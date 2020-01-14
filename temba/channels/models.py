@@ -268,6 +268,7 @@ class Channel(TembaModel):
     CONFIG_USE_NATIONAL = "use_national"
     CONFIG_ENCODING = "encoding"
     CONFIG_PAGE_NAME = "page_name"
+    CONFIG_COMMUNITY_NAME = "community_name"
     CONFIG_PLIVO_AUTH_ID = "PLIVO_AUTH_ID"
     CONFIG_PLIVO_AUTH_TOKEN = "PLIVO_AUTH_TOKEN"
     CONFIG_PLIVO_APP_ID = "PLIVO_APP_ID"
