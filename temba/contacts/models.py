@@ -58,6 +58,7 @@ TWILIO_SCHEME = "twilio"
 TWITTER_SCHEME = "twitter"
 TWITTERID_SCHEME = "twitterid"
 VIBER_SCHEME = "viber"
+VK_SCHEME = 'vk'
 FCM_SCHEME = "fcm"
 WHATSAPP_SCHEME = "whatsapp"
 WECHAT_SCHEME = "wechat"
@@ -72,6 +73,7 @@ URN_SCHEME_CONFIG = (
     (TWITTER_SCHEME, _("Twitter handle"), TWITTER_SCHEME),
     (TWITTERID_SCHEME, _("Twitter ID"), TWITTERID_SCHEME),
     (VIBER_SCHEME, _("Viber identifier"), VIBER_SCHEME),
+    (VK_SCHEME, _("VK identifier"), VK_SCHEME),
     (LINE_SCHEME, _("LINE identifier"), LINE_SCHEME),
     (TELEGRAM_SCHEME, _("Telegram identifier"), TELEGRAM_SCHEME),
     (EMAIL_SCHEME, _("Email address"), EMAIL_SCHEME),
@@ -211,6 +213,19 @@ class URN(object):
         elif scheme == FACEBOOK_SCHEME:
             # we don't validate facebook refs since they come from the outside
             if URN.is_path_fb_ref(path):
+                return True
+
+            # otherwise, this should be an int
+            else:
+                try:
+                    int(path)
+                    return True
+                except ValueError:
+                    return False
+
+        elif scheme == VK_SCHEME:
+            # we don't validate facebook refs since they come from the outside
+            if regex.match(r"^[0-9]+$", path, regex.V0):
                 return True
 
             # otherwise, this should be an int
