@@ -19,13 +19,13 @@ class ClaimView(ClaimViewMixin, SmartFormView):
 
     def form_valid(self, form):
         org = self.request.user.get_org()
-        auth_token = form.cleaned_data["community_access_token"]
-        name = form.cleaned_data["community_name"]
+        community_access_token = form.cleaned_data["community_access_token"]
+        community_name = form.cleaned_data["community_name"]
         community_id = form.cleaned_data["community_id"]
 
         config = {
-            Channel.CONFIG_AUTH_TOKEN: auth_token,
-            Channel.CONFIG_PAGE_NAME: name,
+            Channel.CONFIG_AUTH_TOKEN: community_access_token,
+            Channel.CONFIG_COMMUNITY_NAME: community_name,
             Channel.CONFIG_SECRET: Channel.generate_secret(length=50),
         }
         self.object = Channel.create(

@@ -2,22 +2,10 @@
 
 %h4
   -blocktrans
-    To finish configuring your Facebook connection, you'll need to enter the following webhook URL and token on your application's
-    Messenger settings page. Make sure to check all boxes within the 'Webhooks' section to subscribe to incoming Facebook events and referral parameters in the following list.
+    To finish configuring your VK connection, you'll need to enter the following webhook URL and token on your application's
+    Messenger settings community. Make sure to check all boxes within the 'Callback API' section to subscribe to incoming events types and referral parameters in the following list.
 
-  (<code>messaging_referrals</code>, <code>messages</code>, <code>messsages_deliveries</code>, <code>messaging_postbacks</code>, <code>message_reads</code>, <code>messaging_handovers</code>, <code>messaging_optins</code>, <code>messaging_referrals</code>)
-
-.important
-  %p
-    -blocktrans
-      It may take up to ten minutes for a new webhook to take effect after being set on your Facebook application. Remember,
-      until your Facebook application is approved by Facebook you will only be able to send and receive messages
-      with administrators of your application.
-
-  %p
-    -blocktrans
-      When submitting your application for approval, make sure to include the <code>pages_messaging</code>
-      and <code>pages_messaging_subscriptions</code> permissions so that you are able to initiate conversations with your contacts.
+  (<code>Message received</code>, <code>Message sent</code>, <code>Message Edited</code>, <code>Message Enabled</code>, <code>Message Disabled</code>, <code>Typing Status</code>)
 
 %hr
 

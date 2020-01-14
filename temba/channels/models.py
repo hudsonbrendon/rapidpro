@@ -807,7 +807,7 @@ class Channel(TembaModel):
             return _("%s Channel" % channel_type_display)
 
     def get_address_display(self, e164=False):
-        from temba.contacts.models import TEL_SCHEME, TWITTER_SCHEME, FACEBOOK_SCHEME
+        from temba.contacts.models import TEL_SCHEME, TWITTER_SCHEME, FACEBOOK_SCHEME, VK_SCHEME
 
         if not self.address:
             return ""
@@ -830,6 +830,9 @@ class Channel(TembaModel):
 
         elif FACEBOOK_SCHEME in self.schemes:
             return "%s (%s)" % (self.config.get(Channel.CONFIG_PAGE_NAME, self.name), self.address)
+
+        elif VK_SCHEME in self.schemes:
+            return "%s (%s)" % (self.config.get(Channel.CONFIG_COMMUNITY_NAME, self.name), self.address)
 
         return self.address
 
