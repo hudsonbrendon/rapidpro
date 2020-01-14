@@ -26,7 +26,7 @@ class ClaimView(ClaimViewMixin, SmartFormView):
         config = {
             Channel.CONFIG_AUTH_TOKEN: auth_token,
             Channel.CONFIG_PAGE_NAME: name,
-            Channel.CONFIG_SECRET: Channel.generate_secret(),
+            Channel.CONFIG_SECRET: Channel.generate_secret(length=50),
         }
         self.object = Channel.create(
             org, self.request.user, None, self.channel_type, name=name, address=app_id, config=config
