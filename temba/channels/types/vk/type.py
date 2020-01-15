@@ -20,7 +20,7 @@ class VKType(ChannelType):
     courier_url = r"^vk/(?P<uuid>[a-z0-9\-]+)/receive"
 
     name = "VK"
-    icon = "icon-facebook-official"
+    icon = "icon-vk"
 
     claim_blurb = _(
         """Add a <a href="http://vk.com">VK</a> bot to send and receive messages on behalf
