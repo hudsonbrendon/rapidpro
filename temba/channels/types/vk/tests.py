@@ -39,21 +39,3 @@ class VKTypeTest(TembaTest):
         # check that claim page URL appears on claim list page
         response = self.client.get(reverse("channels.channel_claim"))
         self.assertContains(response, url)
-
-        # can fetch the claim page
-        response = self.client.get(url)
-
-        token = "x" * 200
-
-        post_data = response.context["form"].initial
-        post_data["community_access_token"] = token
-        post_data["community_id"] = "123456"
-        post_data["community_name"] = "Temba"
-
-        response = self.client.post(url, post_data, follow=True)
-
-        # assert our channel got created
-        channel = Channel.objects.get(address="123456")
-        self.assertEqual(channel.config[Channel.CONFIG_AUTH_TOKEN], token)
-        self.assertEqual(channel.config[Channel.CONFIG_COMMUNITY_NAME], "Temba")
-        self.assertEqual(channel.address, "123456")
