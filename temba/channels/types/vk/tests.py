@@ -27,7 +27,7 @@ class VKTypeTest(TembaTest):
                 "auth_token": "09876543",
                 "community_name": "Vk Community",
                 "secret": "203ijwijwij2ej2eii02ie0i2e2e",
-                "callback_check_string": "12j323k"
+                "callback_check_string": "12j323k",
             },
         )
 

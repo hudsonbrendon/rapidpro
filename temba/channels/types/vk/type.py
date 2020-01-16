@@ -28,7 +28,7 @@ class VKType(ChannelType):
     <a href="https://vk.com/dev">developers</a> site first."""
     )
     claim_view = ClaimView
-    
+
     schemes = [VK_SCHEME]
     max_length = 320
     attachment_support = True
