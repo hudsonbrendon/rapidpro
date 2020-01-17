@@ -40,14 +40,14 @@ class VKTypeTest(TembaTest):
 
         token = "x" * 200
 
-        post_data = {
+        data = {
             "community_access_token": token,
             "community_id": "123456",
             "community_name": "Temba",
             "callback_check_string": "123456",
         }
 
-        response = self.client.post(url, post_data, follow=True)
+        response = self.client.post(url, data, follow=True)
 
         channel = Channel.objects.get(address="123456")
         self.assertEqual(channel.config[Channel.CONFIG_AUTH_TOKEN], token)
