@@ -49,7 +49,6 @@ class VKTypeTest(TembaTest):
 
         response = self.client.post(url, post_data, follow=True)
 
-        # assert our channel got created
         channel = Channel.objects.get(address="123456")
         self.assertEqual(channel.config[Channel.CONFIG_AUTH_TOKEN], token)
         self.assertEqual(channel.config[Channel.CONFIG_COMMUNITY_NAME], "Temba")
