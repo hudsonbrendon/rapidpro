@@ -11,18 +11,22 @@
   .info
     %p
       -blocktrans with name=brand.name
-        In order to connect your VK community to {{ name }} you will need to
-        <a href="https://vk.com/dev">create a new VK application</a> that
-        has messaging permissions.
+        To connect your VK community to RapidPro, you will need to
+        create a community token with messaging permissions.
 
     %p
       -blocktrans
-        On the Messenger section of your application, you can create a Community Access Token for the page you wish
-        to connect. Enter that Community Access Token below.
+        To obtain the name of your community, access it and enter the exact name below.
 
     %p
       -blocktrans
-        To get your VK App ID, go to your VK Community and click the About tab in the left column.
+        To obtain your VK community ID, access your Community and copy the entire number
+        found in the URL just after the word public. Copy it and enter it below.
+
+    %p
+      -blocktrans
+        To obtain the verification string, go to the API Usage> Callback API> Server Settings section.
+        You will find the verification string in an excerpt similar to: String to be returned: <code>4412dd18</code>, copy the string and inform below.
 
 -block extra-style
   {{ block.super }}
