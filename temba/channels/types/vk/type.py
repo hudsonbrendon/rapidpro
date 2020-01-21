@@ -23,9 +23,9 @@ class VKType(ChannelType):
     icon = "icon-vk"
 
     claim_blurb = _(
-        """Add a <a href="http://vk.com">VK</a> bot to send and receive messages on behalf
-    of one of your VK community for free. You will need to create a VK application on their
-    <a href="https://vk.com/dev">developers</a> site first."""
+        """Add a VK bot to send and receive messages on behalf of a VK community
+        for free. You will need to create an access token for your community first.
+        """
     )
     claim_view = ClaimView
 
