@@ -274,7 +274,7 @@ class Channel(TembaModel):
     CONFIG_ENCODING = "encoding"
     CONFIG_PAGE_NAME = "page_name"
     CONFIG_COMMUNITY_NAME = "community_name"
-    CONFIG_CALLBACK_CHECK_STRING = "callback_check_string"
+    CONFIG_CALLBACK_VERIFICATION_STRING = "callback_verification_string"
     CONFIG_PLIVO_AUTH_ID = "PLIVO_AUTH_ID"
     CONFIG_PLIVO_AUTH_TOKEN = "PLIVO_AUTH_TOKEN"
     CONFIG_PLIVO_APP_ID = "PLIVO_APP_ID"

@@ -27,7 +27,7 @@ class VKTypeTest(TembaTest):
                 "auth_token": "09876543",
                 "community_name": "Vk Community",
                 "secret": "203ijwijwij2ej2eii02ie0i2e2e",
-                "callback_check_string": "12j323k",
+                "callback_verification_string": "12j323k",
             },
         )
 
@@ -44,7 +44,7 @@ class VKTypeTest(TembaTest):
             "community_access_token": token,
             "community_id": "123456",
             "community_name": "Temba",
-            "callback_check_string": "123456",
+            "callback_verification_string": "123456",
         }
 
         response = self.client.post(url, data, follow=True)
@@ -52,5 +52,5 @@ class VKTypeTest(TembaTest):
         channel = Channel.objects.get(address="123456")
         self.assertEqual(channel.config[Channel.CONFIG_AUTH_TOKEN], token)
         self.assertEqual(channel.config[Channel.CONFIG_COMMUNITY_NAME], "Temba")
-        self.assertEqual(channel.config[Channel.CONFIG_CALLBACK_CHECK_STRING], "123456")
+        self.assertEqual(channel.config[Channel.CONFIG_CALLBACK_VERIFICATION_STRING], "123456")
         self.assertEqual(channel.address, "123456")
